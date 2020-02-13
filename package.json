@@ -1,0 +1,19 @@
+{
+  "name": "developer_profile_generator",
+  "version": "1.0.0",
+  "description": "profile generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anam2028/Developer_Profile_Generator.git"
+  },
+  "author": "Anamika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anam2028/Developer_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/anam2028/Developer_Profile_Generator#readme"
+}
