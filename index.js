@@ -1,10 +1,10 @@
 
 // axios calls api's from node and gets response
-// get fucntion through inquirer 
+// get function through inquirer 
 
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const axios = require("axios");
+const axios = require("axios");
 
 /* - The generated README includes the following sections:
   - Title
@@ -62,7 +62,7 @@ inquirer
         {
             type: "input",
             name: "questions",
-            message: "These are the questions"
+            message: "These are the Questions:"
         }
     ])
 
@@ -72,11 +72,48 @@ inquirer
         fs.writeFile("ReadMe.md", JSON.stringify(response), function (err) {
         });
 
-        var text = Object.create(null);
+        var content = Object.create(null);
         fs.readFile("ReadMe.md", "utf-8", function (error, data) {
-            console.log("new data")
-            text = JSON.parse(data);
+            // console.log("new data")
+            content = JSON.parse(data);
 
         })
-    })
+
+        // // formate ReadMe file
+        // //`# ${content.title}`
+
+        // fs.writeFile("ReadMe.md", "# " + content.title + "\n" + "\n", function (err) {
+        //     if (err) {
+        //         return console.log(err);
+        //     }
+        // });
+
+        inquirer
+            .prompt({
+                message: "Enter your GitHub username",
+                name: "username"
+            })
+            .then(function ({ username }) {
+                const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+
+                axios
+                    .get(queryUrl)
+                    .then(function (res) {
+                        const { avatar_url } = res.data[1].owner;
+                        fs.appendFile("ReadMe.md", "## My GitHub profile" + "\n" + "\n" + "![My Image](" + avatar_url + ")" + "\n" + "\n", function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                            console.log("Your Readme is saved!");
+                        });
+
+                    })
+            });
+
+    });
+
+
+
+
+
 
