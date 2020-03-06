@@ -1,6 +1,5 @@
-
+// Get function through inquirer 
 // axios calls api's from node and gets response
-// get function through inquirer 
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -70,19 +69,9 @@ inquirer
 
     .then(function (response) {
         console.log(response)
-        // fs.writeFile("ReadMe.md", JSON.stringify(response), function (err) {
-            
-        // });
-
-        // var content = Object.create(null);
-        // fs.readFile("ReadMe.md", "utf-8", function (error, data) {
-        //     // console.log("new data")
-        //     content = JSON.parse(data);
-
-        // })
 
         // // format ReadMe file
-        // //`# ${content.title}`
+        // //`# ${text.title}`
 
         fs.writeFile("ReadMe.md", "# " + response.title + "\n" + "\n", function (err) {
             if (err) {

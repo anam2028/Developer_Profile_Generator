@@ -1,20 +1,20 @@
-# Github Page
+# Readme Generator
 
-# Project Description
+# To generate readme for projects
 
-# installation
+# Table details
 
-# Contetnts
+# npm, inquirer, mysql
 
 # Usage
 
+# Email and Image
+
 # License
 
-# Contributing
+# Test
 
-# questions
-
-# tests
+# None
 
 ## My GitHub profile
 
