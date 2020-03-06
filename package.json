@@ -18,6 +18,8 @@
   "homepage": "https://github.com/anam2028/Developer_Profile_Generator#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "inquirer": "^7.0.6"
+    "fs": "0.0.1-security",
+    "inquirer": "^7.0.6",
+    "require": "^2.4.20"
   }
 }

@@ -69,24 +69,39 @@ inquirer
     // use of markdown and template litral
 
     .then(function (response) {
-        fs.writeFile("ReadMe.md", JSON.stringify(response), function (err) {
-        });
+        console.log(response)
+        // fs.writeFile("ReadMe.md", JSON.stringify(response), function (err) {
+            
+        // });
 
-        var content = Object.create(null);
-        fs.readFile("ReadMe.md", "utf-8", function (error, data) {
-            // console.log("new data")
-            content = JSON.parse(data);
+        // var content = Object.create(null);
+        // fs.readFile("ReadMe.md", "utf-8", function (error, data) {
+        //     // console.log("new data")
+        //     content = JSON.parse(data);
 
-        })
+        // })
 
-        // // formate ReadMe file
+        // // format ReadMe file
         // //`# ${content.title}`
 
-        // fs.writeFile("ReadMe.md", "# " + content.title + "\n" + "\n", function (err) {
-        //     if (err) {
-        //         return console.log(err);
-        //     }
-        // });
+        fs.writeFile("ReadMe.md", "# " + response.title + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.description + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.table + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
 
         inquirer
             .prompt({
