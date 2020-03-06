@@ -102,6 +102,41 @@ inquirer
             }
         });
 
+        fs.appendFile("ReadMe.md", "# " + response.installation + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.usage + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.license + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.contributing + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.tests + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
+
+        fs.appendFile("ReadMe.md", "# " + response.questions + "\n" + "\n", function (err) {
+            if (err) {
+                return console.log(err);
+            }
+        });
 
         inquirer
             .prompt({
